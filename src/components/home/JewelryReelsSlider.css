@@ -1,0 +1,362 @@
+
+.reels-slider-section {
+  width: 100%;
+  padding: 4.5rem 0 4.75rem;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fluid full-width container matching site grid */
+.reels-container {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 4.5vw, 5rem);
+}
+
+/* Section Header ( 1) */
+.reels-slider-section .section-capture {
+  margin-bottom: 2.75rem;
+  text-align: center;
+}
+
+.reels-slider-section .sub-title {
+  display: block;
+  font-family: var(--font-body, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #c86542;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.5rem;
+}
+
+.reels-slider-section .section-title h2 {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-weight: 400;
+  color: #201e1d;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Viewport Track Container */
+.reels-carousel-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  --reels-gap: 28px;
+  padding: 4px 0 10px;
+}
+
+/* Moving Track */
+.reels-track {
+  display: flex;
+  align-items: stretch;
+  gap: var(--reels-gap);
+  transition: transform 0.48s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Single Slide Item (Calculated for 5 visible cards on desktop) */
+.reel-slide {
+  box-sizing: border-box;
+}
+
+/* Reel Card Shell */
+.reel-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 15.6;
+  min-height: 440px;
+  max-height: 520px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #121212;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.reel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+/* Background Video Wrapper & Video */
+.reel-video-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.reel-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #181818;
+  pointer-events: none;
+}
+
+/* Fallback image inside video */
+.reel-bg-video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark Gradient Overlay for Maximum Legibility */
+.reel-dark-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.94) 0%,
+    rgba(0, 0, 0, 0.65) 24%,
+    rgba(0, 0, 0, 0.15) 50%,
+    transparent 100%
+  );
+}
+
+/* Product Info Badge at Bottom ( 1) */
+.reel-product-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 14px;
+  right: 14px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Square White Thumbnail Container */
+.reel-product-thumb {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  flex-shrink: 0;
+}
+
+.reel-product-thumb a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.reel-product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.reel-card:hover .reel-product-thumb img {
+  transform: scale(1.08);
+}
+
+/* Product Metadata */
+.reel-product-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.reel-product-name {
+  font-family: var(--font-body, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.reel-product-name a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.reel-product-name a:hover {
+  color: #fcebe4;
+}
+
+/* Pricing line */
+.reel-product-pricing {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.1;
+}
+
+.reel-product-pricing .new-price {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.reel-product-pricing .old-price {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: line-through;
+}
+
+/* ==========================================================================
+   Navigation Buttons Below Carousel ( 2)
+   - Centered horizontally
+   - Left button: disabled gray circle with white arrow when at beginning
+   - Right button: active white circle with coral arrow & soft shadow
+   ========================================================================== */
+
+.reels-nav-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 2.75rem;
+  width: 100%;
+}
+
+.reels-arrow-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+/* Disabled State (Left arrow at start in Screenshot 2) */
+.reels-arrow-btn.is-disabled {
+  background-color: #cfd2d6;
+  color: #ffffff;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+/* Active State (Right arrow in Screenshot 2) */
+.reels-arrow-btn.is-active {
+  background-color: #ffffff;
+  color: #c86542;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09);
+  cursor: pointer;
+}
+
+.reels-arrow-btn.is-active:hover {
+  background-color: #ffffff;
+  color: #b65735;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200, 101, 66, 0.25);
+}
+
+.reels-arrow-btn.is-active:active {
+  transform: translateY(0);
+}
+
+/* Focus styles for accessibility */
+.reels-arrow-btn:focus-visible {
+  outline: 2px solid #c86542;
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .reels-carousel-wrapper {
+    --reels-gap: 22px;
+  }
+}
+
+@media (max-width: 960px) {
+  .reels-slider-section {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .reels-carousel-wrapper {
+    --reels-gap: 18px;
+  }
+
+  .reel-card {
+    min-height: 390px;
+  }
+
+  .reel-product-thumb {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    min-height: 46px;
+  }
+
+  .reel-product-name {
+    font-size: 0.75rem;
+  }
+
+  .reel-product-pricing .new-price {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .reels-carousel-wrapper {
+    --reels-gap: 14px;
+  }
+
+  .reel-card {
+    min-height: 350px;
+  }
+
+  .reel-product-badge {
+    bottom: 12px;
+    left: 10px;
+    right: 10px;
+    gap: 8px;
+  }
+
+  .reel-product-thumb {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  .reels-arrow-btn {
+    width: 42px;
+    height: 42px;
+  }
+}

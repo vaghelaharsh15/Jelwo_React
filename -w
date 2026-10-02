@@ -1,0 +1,31 @@
+HTTP/1.1 200 OK
+Date: Fri, 18 Sep 2026 06:48:00 GMT
+Content-Type: video/mp4
+Content-Length: 4681348
+Connection: keep-alive
+access-control-allow-origin: *
+access-control-expose-headers: Content-Type, Range, Access-Control-Allow-Origin
+cache-control: public, max-age=31557600
+last-modified: Tue, 15 Sep 2026 06:46:11 GMT
+content-security-policy: sandbox allow-scripts allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-downloads allow-top-navigation-by-user-activation; report-to csp-reports
+link: <https://cdn.shopify.com/videos/c/vp/72e5b0f02511443c8a62a81b9024ddb9/72e5b0f02511443c8a62a81b9024ddb9.HD-1080p-3.3Mbps-44622574.mp4>; rel="canonical"
+reporting-endpoints: csp-reports="https://security-reports.shopifysvc.com/reporting-api?source_app=cdn-shopify-video-production-core-processed&policy_id=aab9a444-ea1a-4369-a32b-f5a658701a14"
+server-timing: imagery;dur=308.455, imageryFetch;dur=237.177
+Server-Timing: ipv6
+timing-allow-origin: *
+x-content-type-options: nosniff
+Nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+x-xss-protection: 1; mode=block
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=GnPQT%2BcRKVbMydFi0%2B7vW%2BE%2Ffc771D5BA%2BAEGEzaKHAhsqCqsoikIaI7yhYeyIRAB7f7z9ZJGixocz9e1icYKm21yZm8wz7QIQ2Pshh4kWHG%2FjoDQ8K0IJhQ2Wy%2BhIXY6DDQqETKt4c0mSrQGlaXnzs%3D"}]}
+X-Permitted-Cross-Domain-Policies: none
+x-dc: gcp-us-central1,gcp-us-central1
+x-request-id: 47c3d369-1a1f-42f2-9410-deef75718c27-1788069476
+server: cloudflare
+Accept-Ranges: bytes
+X-Download-Options: noopen
+Age: 1644603
+cf-cache-status: HIT
+CF-RAY: a3ce670aea2d4413-BOM
+alt-svc: h3=":443"; ma=86400
+

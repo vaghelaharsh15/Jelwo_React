@@ -1,0 +1,196 @@
+
+.shop-by-category-section {
+  width: 100%;
+  padding: 5rem 0 4rem 0;
+  background-color: #ffffff;
+}
+
+.wide-content-container {
+  width: 100%;
+  max-width: 100%;
+  padding-inline: clamp(1.5rem, 4.5vw, 5rem);
+  margin-inline: auto;
+}
+
+.section-header-wrap {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-subtitle {
+  color: #c86542;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.section-main-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 3.5vw, 2.9rem);
+  font-weight: 400;
+  color: #1e1b18;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* 5 Fluid Category Cards Grid */
+.category-cards-fluid-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(1rem, 2vw, 1.85rem);
+}
+
+.category-showcase-card {
+  background-color: #fbf7f2;
+  border: 1px solid #eee4d8;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
+}
+
+.category-showcase-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(200, 101, 66, 0.12);
+  border-color: #c86542;
+}
+
+.category-card-inner {
+  padding: 2.25rem 1rem 1.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.category-circle-disc {
+  width: clamp(120px, 10.5vw, 165px);
+  height: clamp(120px, 10.5vw, 165px);
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  border: 1px solid #ebdcd0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
+}
+
+.category-showcase-card:hover .category-circle-disc {
+  transform: scale(1.04);
+  border-color: #c86542;
+}
+
+.category-circle-img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-showcase-card:hover .category-circle-img {
+  transform: scale(1.08);
+}
+
+.category-item-count {
+  font-size: 0.8125rem;
+  color: #726b64;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.category-label-footer {
+  border-top: 1px solid #eee4d8;
+  padding: 1.15rem 0.5rem;
+  text-align: center;
+  background-color: #fbf7f2;
+  transition: background-color 0.2s;
+}
+
+.category-name-text {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #26221f;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.category-showcase-card:hover .category-name-text {
+  color: #c86542;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .shop-by-category-section {
+    padding: 3.5rem 0 3rem 0;
+  }
+
+  .category-cards-fluid-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .shop-by-category-section {
+    padding: 3rem 0 2.5rem 0;
+  }
+
+  .section-header-wrap {
+    margin-bottom: 2.25rem;
+  }
+
+  .category-cards-fluid-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .category-showcase-card:last-child:nth-child(odd) {
+    grid-column: span 2;
+    max-width: 240px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .category-card-inner {
+    padding: 1.25rem 0.5rem 0.85rem 0.5rem;
+  }
+
+  .category-circle-disc {
+    width: 105px;
+    height: 105px;
+    margin-bottom: 1rem;
+  }
+
+  .category-label-footer {
+    padding: 0.85rem 0.4rem;
+  }
+
+  .category-name-text {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .category-cards-fluid-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .category-showcase-card:last-child:nth-child(odd) {
+    grid-column: span 1;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,531 @@
+
+.popular-products-section {
+  width: 100%;
+  padding: 5rem 0 5.5rem;
+  background-color: #f7f4ee;
+  border-top: 1px solid #eee7dd;
+  border-bottom: 1px solid #eee7dd;
+  position: relative;
+}
+
+/* Fluid Full-Width Container */
+.popular-container {
+  width: 100%;
+  max-width: 100%;
+  padding-inline: clamp(1.5rem, 4.5vw, 5rem);
+  margin-inline: auto;
+}
+
+/* Section Header (Matches 1st Screenshot: Perfectly Centered Subtitle & Serif Title) */
+.popular-products-section .popular-section-header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin-bottom: 3.25rem;
+  width: 100%;
+}
+
+.popular-products-section .popular-section-subtitle {
+  color: #c86542;
+  font-family: var(--font-body, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.popular-products-section .popular-section-title {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2.4rem, 4vw, 3.25rem);
+  color: #1e1b18;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0 auto;
+  line-height: 1.15;
+  text-align: center;
+}
+
+/* 4-Column Product Grid (Matches 1st Screenshot) */
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.25rem, 2vw, 2rem);
+  width: 100%;
+}
+
+/* Single Product Card */
+.popular-card {
+  background-color: #ffffff;
+  border: 1px solid #eee6dc;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s ease;
+  position: relative;
+}
+
+.popular-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  border-color: #dfd3c5;
+}
+
+/* Image Container */
+.popular-image-box {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popular-img-link {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.popular-img-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.popular-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.25rem;
+}
+
+.popular-img.primary-img.img-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.popular-img.primary-img.img-hidden {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.popular-img.secondary-img.img-visible {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.popular-img.secondary-img.img-hidden {
+  opacity: 0;
+  transform: scale(1);
+}
+
+/* Green Discount Pill Badge (e.g. 45%, 25%) */
+.popular-discount-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: #2cb561;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+  z-index: 3;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 6px rgba(44, 181, 97, 0.25);
+}
+
+/* Floating Actions (Wishlist & Quick View) */
+.popular-floating-actions {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translate(-50%, -6px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+  z-index: 10;
+}
+
+.popular-card:hover .popular-floating-actions {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.popular-action-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 0;
+  background-color: #ffffff;
+  border: 1px solid #e0d7cd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555555;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.popular-action-icon-btn:hover {
+  background-color: #c86542 !important;
+  border-color: #c86542 !important;
+  color: #ffffff !important;
+}
+
+.popular-action-icon-btn:hover svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+.popular-action-icon-btn.active {
+  background-color: #c86542;
+  border-color: #c86542;
+  color: #ffffff;
+}
+
+.popular-action-icon-btn.active svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Card Information Body */
+.popular-info {
+  padding: 1.15rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #ffffff;
+}
+
+/* Top Row Info */
+.popular-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.popular-title-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.popular-card-title {
+  font-family: var(--font-body, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: #1e1b18;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popular-card-title a {
+  color: #1e1b18;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.popular-card-title a:hover {
+  color: #c86542;
+}
+
+.popular-card-category {
+  font-size: 0.75rem;
+  color: #c86542;
+  font-weight: 500;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* Square Cart Button (Matches Screenshot) */
+.popular-cart-btn {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  border: 1px solid #e0d7cd;
+  border-radius: 0;
+  background-color: #ffffff;
+  color: #55504a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.popular-cart-btn:hover {
+  background-color: #c86542;
+  border-color: #c86542;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(200, 101, 66, 0.3);
+}
+
+.popular-cart-btn:hover svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Subtle Hairline Divider */
+.popular-card-divider {
+  border-top: 1px solid #f1eae1;
+  margin: 0.85rem 0;
+  width: 100%;
+}
+
+/* Bottom Row (Price & Rating) */
+.popular-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.popular-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.popular-price-current {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+.popular-price-old {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #88827b;
+  text-decoration: line-through;
+}
+
+.popular-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.popular-rating-text {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #66615b;
+}
+
+/* ==========================================================================
+   Centered "VIEW COLLECTION" Button (Matches 2nd Screenshot)
+   ========================================================================== */
+
+.popular-view-collection-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.5rem;
+  width: 100%;
+}
+
+.popular-view-collection-btn {
+  display: inline-block;
+  padding: 0.85rem 2.6rem;
+  background-color: #c86542;
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(200, 101, 66, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.popular-view-collection-btn:hover {
+  background-color: #b65735;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200, 101, 66, 0.35);
+}
+
+/* ==========================================================================
+   Cart Notification Toast
+   ========================================================================== */
+
+.popular-cart-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #1e1b18;
+  color: #ffffff;
+  padding: 0.85rem 1.4rem;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  z-index: 1000;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .popular-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .popular-products-section {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .popular-section-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .popular-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .popular-floating-actions {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    top: 8px;
+    right: 8px;
+    left: auto;
+    gap: 6px;
+  }
+
+  .popular-action-icon-btn {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+  }
+
+  .popular-action-icon-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .popular-info {
+    padding: 0.85rem 0.75rem 1rem;
+  }
+
+  .popular-card-title {
+    font-size: 0.75rem;
+  }
+
+  .popular-cart-toast {
+    bottom: 72px;
+    right: 16px;
+    left: 16px;
+    max-width: calc(100% - 32px);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .popular-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-width: 100%;
+    margin-inline: 0;
+  }
+
+  .popular-info {
+    padding: 0.65rem 0.5rem 0.75rem;
+  }
+
+  .popular-card-title {
+    font-size: 0.7rem;
+  }
+
+  .popular-card-category {
+    font-size: 0.65rem;
+    margin-top: 0.15rem;
+  }
+
+  .popular-cart-btn {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+  }
+
+  .popular-cart-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .popular-price-current {
+    font-size: 0.78rem;
+  }
+
+  .popular-price-old {
+    font-size: 0.7rem;
+  }
+
+  .popular-rating-text {
+    font-size: 0.7rem;
+  }
+
+  .popular-view-collection-wrap {
+    margin-top: 2rem;
+  }
+
+  .popular-view-collection-btn {
+    padding: 0.75rem 1.8rem;
+    font-size: 0.75rem;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 340px) {
+  .popular-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin-inline: auto;
+  }
+}
+

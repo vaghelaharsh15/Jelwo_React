@@ -1,0 +1,323 @@
+
+.refund-page-root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ffffff;
+  animation: refundFadeIn 0.35s ease-out;
+}
+
+@keyframes refundFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1. Breadcrumb Hero Banner Section
+   -------------------------------------------------------------------------- */
+.refund-breadcrumb-area {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 0;
+  background-color: #f3f2ee;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.refund-breadcrumb-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+}
+
+.refund-breadcrumb-tint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 24, 20, 0.42);
+  z-index: 1;
+}
+
+.refund-breadcrumb-index {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.refund-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+  gap: 8px;
+}
+
+.refund-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.refund-breadcrumb-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s ease, text-decoration 0.2s ease;
+  opacity: 0.9;
+}
+
+.refund-breadcrumb-btn:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.refund-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.refund-breadcrumb-current {
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+.refund-breadcrumb-title h1 {
+  font-family: var(--font-heading, 'Playfair Display', Georgia, serif);
+  font-size: clamp(34px, 4.5vw, 46px);
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  line-height: 1.15;
+}
+
+/* --------------------------------------------------------------------------
+   2. Main Two-Column Content Layout
+   -------------------------------------------------------------------------- */
+.refund-main-section {
+  width: 100%;
+  padding: 5rem 0 6.5rem 0;
+  background-color: #ffffff;
+}
+
+.refund-container {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 4.5vw, 4rem);
+}
+
+.refund-two-columns-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(2.5rem, 5.5vw, 6rem);
+  row-gap: 2.5rem;
+  align-items: start;
+}
+
+.refund-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   3. Headings & Typography
+   -------------------------------------------------------------------------- */
+.refund-block {
+  margin-bottom: 2.75rem;
+}
+
+.refund-block:last-child {
+  margin-bottom: 0;
+}
+
+.refund-heading {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #24201c;
+  line-height: 1.35;
+  margin: 0 0 1.25rem 0;
+}
+
+.refund-paragraph {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: #6a645e;
+  margin: 0 0 1.25rem 0;
+}
+
+.refund-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.refund-contact-link {
+  color: #c86542;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.refund-contact-link:hover {
+  text-decoration: underline;
+  color: #b55331;
+}
+
+/* --------------------------------------------------------------------------
+   4. Bullet Lists (Exchanges & Refunds)
+   -------------------------------------------------------------------------- */
+.refund-bullet-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.refund-bullet-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.refund-bullet-label {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #2b2723;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.refund-bullet-desc {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #6a645e;
+  margin: 0 0 0 1.25rem;
+}
+
+/* Simple Bulleted List */
+.refund-simple-bullets {
+  list-style-type: disc;
+  margin: 0 0 1.35rem 1.35rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.refund-simple-bullets li {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #6a645e;
+}
+
+/* --------------------------------------------------------------------------
+   5. Floating Back to Top Button
+   -------------------------------------------------------------------------- */
+.refund-back-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99;
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border: 1px solid #eee4d8;
+  border-left: 2.5px solid #d9534f;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #24201c;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease,
+              box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.refund-back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.refund-back-to-top-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+  color: #c86542;
+}
+
+/* --------------------------------------------------------------------------
+   6. Responsive Layout Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .refund-two-columns-grid {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+
+  .refund-main-section {
+    padding: 3.5rem 0 4.5rem 0;
+  }
+
+  .refund-block {
+    margin-bottom: 2.25rem;
+  }
+
+  .refund-back-to-top-btn {
+    bottom: 72px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+  }
+}
+

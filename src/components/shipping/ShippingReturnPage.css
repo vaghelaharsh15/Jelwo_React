@@ -1,0 +1,313 @@
+
+.shipping-page-root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ffffff;
+  animation: shippingFadeIn 0.35s ease-out;
+}
+
+@keyframes shippingFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1. Breadcrumb Hero Banner Section (Matches Screenshot 1)
+   -------------------------------------------------------------------------- */
+.shipping-breadcrumb-area {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 0;
+  background-color: #f3f2ee;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.shipping-breadcrumb-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+}
+
+.shipping-breadcrumb-tint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 24, 20, 0.42);
+  z-index: 1;
+}
+
+.shipping-breadcrumb-index {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.shipping-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+  gap: 8px;
+}
+
+.shipping-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body, 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.shipping-breadcrumb-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s ease, text-decoration 0.2s ease;
+  opacity: 0.9;
+}
+
+.shipping-breadcrumb-btn:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.shipping-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.shipping-breadcrumb-current {
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+.shipping-breadcrumb-title h1 {
+  font-family: var(--font-heading, 'Playfair Display', Georgia, serif);
+  font-size: clamp(34px, 4.5vw, 46px);
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  line-height: 1.15;
+}
+
+/* --------------------------------------------------------------------------
+   2. Main Two-Column Content Layout (Matches Screenshots 1 & 2)
+   -------------------------------------------------------------------------- */
+.shipping-main-section {
+  width: 100%;
+  padding: 5rem 0 6.5rem 0;
+  background-color: #ffffff;
+}
+
+.shipping-container {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 4.5vw, 4rem);
+}
+
+.shipping-two-columns-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(2.5rem, 5.5vw, 6rem);
+  row-gap: 3rem;
+  align-items: start;
+}
+
+.shipping-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   3. Headings & Typography
+   -------------------------------------------------------------------------- */
+.shipping-block {
+  margin-bottom: 3rem;
+}
+
+.shipping-block:last-child {
+  margin-bottom: 0;
+}
+
+.shipping-heading {
+  font-family: var(--font-body, 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #24201c;
+  line-height: 1.35;
+  margin: 0 0 1.25rem 0;
+}
+
+.shipping-paragraph {
+  font-family: var(--font-body, 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: #6a645e;
+  margin: 0 0 1.25rem 0;
+}
+
+.shipping-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Simple Disc Bullet List (RETURNS & REFUNDS)
+   -------------------------------------------------------------------------- */
+.shipping-simple-bullets {
+  list-style-type: disc;
+  margin: 0 0 1.35rem 1.35rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.shipping-simple-bullets li {
+  font-family: var(--font-body, 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #6a645e;
+}
+
+/* --------------------------------------------------------------------------
+   5. Bullet Group with Labels & Descriptions (EXCHANGES & SHIPPING)
+   -------------------------------------------------------------------------- */
+.shipping-bullet-group {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.shipping-bullet-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.shipping-bullet-label {
+  font-family: var(--font-body, 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #2b2723;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.shipping-bullet-desc {
+  font-family: var(--font-body, 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #6a645e;
+  margin: 0 0 0 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Floating Back to Top Button (Matches Screenshot 2 Bottom-Right)
+   -------------------------------------------------------------------------- */
+.shipping-back-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99;
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border: 1px solid #eee4d8;
+  border-left: 2.5px solid #d9534f;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #24201c;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease,
+              box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.shipping-back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.shipping-back-to-top-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+  color: #c86542;
+}
+
+/* --------------------------------------------------------------------------
+   7. Responsive Layout Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .shipping-two-columns-grid {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+
+  .shipping-main-section {
+    padding: 3.5rem 0 4.5rem 0;
+  }
+
+  .shipping-block {
+    margin-bottom: 2.25rem;
+  }
+
+  .shipping-back-to-top-btn {
+    bottom: 72px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+  }
+}
+

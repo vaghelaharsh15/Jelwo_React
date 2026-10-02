@@ -1,0 +1,310 @@
+
+/* 1. Breadcrumb Hero Banner Section  */
+.collections-page-root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ffffff;
+  animation: fadeIn 0.35s ease-out;
+}
+
+.breadcrumb-area {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 0;
+  background-color: #f3f2ee;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Background image with subtle overlay */
+.breadcrumb-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+}
+
+.breadcrumb-dark-tint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 24, 20, 0.32);
+  z-index: 1;
+}
+
+.breadcrumb-index {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Breadcrumb links (HOME - COLLECTIONS) */
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+  gap: 8px;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.breadcrumb-item button.breadcrumb-nav-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s ease, text-decoration 0.2s ease;
+  opacity: 0.9;
+}
+
+.breadcrumb-item button.breadcrumb-nav-btn:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Breadcrumb Main Title (Collections) */
+.breadcrumb-title h1 {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 991px) {
+  .breadcrumb-area {
+    min-height: 170px;
+    padding: 40px 0;
+  }
+  .breadcrumb-title h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 576px) {
+  .breadcrumb-area {
+    min-height: 150px;
+    padding: 35px 0;
+  }
+  .breadcrumb-title h1 {
+    font-size: 28px;
+  }
+}
+
+/* 2. Collection Items Grid Section  */
+.list-collection.section-ptb {
+  padding-top: clamp(45px, 6vw, 85px);
+  padding-bottom: clamp(60px, 8vw, 110px);
+  background-color: #ffffff;
+}
+
+.list-collection ul.grid-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 40px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-collection ul.grid-wrap li.grid-wrapper {
+  position: relative;
+  list-style: none;
+}
+
+/* Card Block Link */
+.coll-block {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Square Image Box - Single Uniform Background (#f7f7f7) */
+.collection-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #f7f7f7;
+  overflow: hidden;
+  display: block;
+  border-radius: 0;
+}
+
+/* Top-Left Count Badge */
+.collection-img span.item-count-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 3;
+  background-color: #ffffff;
+  color: #1f1d1b;
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 9px 14px;
+  border-radius: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  pointer-events: none;
+  letter-spacing: 0.02em;
+}
+
+/* Direct Jewelry Product Image - 100% full cover on the card */
+.collection-img img.collection-product-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* For images with pure white background (jewelry-pro-*.jpg), blend multiply onto #f7f7f7 */
+.collection-img img.collection-product-img.blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+/* Hover Zoom Effect */
+.coll-block:hover .collection-img img.collection-product-img {
+  transform: scale(1.08);
+}
+
+/* Below-Card Title Label */
+.collection-content {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.collection-content .content {
+  padding: 16px 8px 6px;
+}
+
+.collection-content .content h6 {
+  font-family: var(--font-body), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1f1d1b;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.coll-block:hover .collection-content .content h6 {
+  color: var(--accent-terracotta);
+}
+
+/* Responsive Grid Breakpoints */
+@media (max-width: 1199px) {
+  .list-collection ul.grid-wrap {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+    row-gap: 34px;
+  }
+}
+
+@media (max-width: 991px) {
+  .list-collection ul.grid-wrap {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 22px;
+    row-gap: 30px;
+  }
+  .collection-img span.item-count-badge {
+    top: 12px;
+    left: 12px;
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .list-collection.section-ptb {
+    padding-top: 35px;
+    padding-bottom: 50px;
+  }
+  .list-collection ul.grid-wrap {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .collection-content .content {
+    padding: 12px 4px 4px;
+  }
+  .collection-content .content h6 {
+    font-size: 13px;
+  }
+  .collection-img span.item-count-badge {
+    top: 10px;
+    left: 10px;
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .list-collection ul.grid-wrap {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

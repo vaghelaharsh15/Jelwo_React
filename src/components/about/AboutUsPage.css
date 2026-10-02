@@ -1,0 +1,809 @@
+
+.about-page-root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ffffff;
+  animation: aboutFadeIn 0.35s ease-out;
+}
+
+@keyframes aboutFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 1. Breadcrumb Hero Banner Section ( 1) */
+.about-breadcrumb-area {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  background-color: #f3f2ee;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.about-breadcrumb-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+}
+
+.about-breadcrumb-tint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(28, 22, 18, 0.38);
+  z-index: 1;
+}
+
+.about-breadcrumb-index {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Breadcrumb Navigation: HOME - ABOUT US */
+.about-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+  gap: 8px;
+}
+
+.about-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.about-breadcrumb-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s ease, text-decoration 0.2s ease;
+  opacity: 0.92;
+}
+
+.about-breadcrumb-btn:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.about-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+  font-size: 13px;
+  user-select: none;
+}
+
+.about-breadcrumb-current {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.about-breadcrumb-title h1 {
+  font-family: 'Cormorant Garamond', var(--font-serif), Georgia, serif;
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 2. "Our about story" Section (s 1 & 2) */
+.about-story-section {
+  padding: 70px 0 95px 0;
+  background-color: #ffffff;
+}
+
+.about-story-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-sub-title {
+  display: block;
+  font-family: var(--font-body), sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta, #c86542);
+  margin-bottom: 10px;
+}
+
+.about-main-title {
+  font-family: 'Cormorant Garamond', var(--font-serif), Georgia, serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #1f1d1b;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Hero Craftsmanship Photo */
+.about-hero-img-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 8.5;
+  min-height: 380px;
+  max-height: 620px;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: #f4ede5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 60px;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-hero-img-wrap:hover .about-hero-img {
+  transform: scale(1.025);
+}
+
+/* 3. Stats / Milestones 3-Column Grid ( 2) */
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 10px 15px 0 15px;
+}
+
+.about-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-stat-heading {
+  font-family: var(--font-display), 'Outfit', sans-serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #1f1d1b;
+  margin: 0 0 14px 0;
+  line-height: 1.35;
+}
+
+.about-stat-desc {
+  font-family: var(--font-body), sans-serif;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #6f6861;
+  margin: 0 auto;
+  max-width: 340px;
+  letter-spacing: 0.01em;
+}
+
+/* Floating Scroll-To-Top Button */
+.about-floating-scroll-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 38px;
+  height: 38px;
+  background-color: #ffffff;
+  border: 1px solid #e2dad0;
+  border-left: 2px solid var(--accent-terracotta, #c86542);
+  color: #2b2825;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  z-index: 99;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-floating-scroll-top:hover {
+  background-color: #FAF7F2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .about-story-section {
+    padding: 55px 0 75px 0;
+  }
+
+  .about-hero-img-wrap {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 45px;
+  }
+
+  .about-stats-grid {
+    gap: 30px;
+  }
+
+  .about-main-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 0;
+  }
+
+  .about-hero-img-wrap {
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    margin-bottom: 40px;
+  }
+
+  .about-breadcrumb-title h1 {
+    font-size: 34px;
+  }
+
+  .about-breadcrumb-area {
+    min-height: 180px;
+    padding: 45px 0;
+  }
+
+  .about-main-title {
+    font-size: 30px;
+  }
+
+  .about-story-section {
+    padding: 40px 0 60px 0;
+  }
+
+  .about-floating-scroll-top {
+    bottom: 72px;
+    right: 16px;
+  }
+}
+
+/* ==========================================================================
+   4. Testimonials Slider Section 
+   ========================================================================== */
+
+.about-section3 {
+  position: relative;
+  background-color: #F8F3EE; /* Subtle warm luxury beige/sand tint  */
+  padding: 0 0 65px 0;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.about-section3 .container {
+  position: relative;
+}
+
+.about-slider {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.about-slider .swiper-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+}
+
+.about-slider .swiper-slide {
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+.about-slider .swiper-slide.swiper-slide-active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Testimonial Content Wrapper */
+.testi-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 50px;
+}
+
+/* Overlapping Avatar at the top edge of the tinted section */
+.testi-img-avtar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -46px; /* Floats halfway out onto the white background */
+  margin-bottom: 20px;
+}
+
+.testi-img {
+  display: inline-block;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 6px solid #ffffff;
+  background-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.testi-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* "WE LOVE OUR CLIENTS" Sub-Label */
+.testi-det {
+  display: block;
+  font-family: var(--font-body), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b635c;
+  margin-top: 18px;
+}
+
+/* Testimonial Quote & Name */
+.testi-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.testi-desc p {
+  font-family: 'Cormorant Garamond', var(--font-serif), Georgia, serif;
+  font-size: 26px;
+  line-height: 1.5;
+  color: #554e47;
+  font-weight: 400;
+  margin: 0 0 22px 0;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.testi-name {
+  display: block;
+  font-family: var(--font-display), 'Outfit', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1f1d1b;
+}
+
+/* Circular Navigation Arrows */
+.swiper-arrow {
+  position: absolute;
+  top: 60%;
+  left: -20px;
+  right: -20px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.arrow-prev,
+.arrow-next {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a443e;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.25s ease;
+  user-select: none;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.arrow-prev:hover,
+.arrow-next:hover {
+  background-color: var(--accent-terracotta, #c86542);
+  color: #ffffff;
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(200, 101, 66, 0.25);
+}
+
+/* Pagination Bullets */
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d6cdc4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 22px;
+  border-radius: 9999px;
+  background-color: var(--accent-terracotta, #c86542);
+}
+
+@media (max-width: 768px) {
+  .about-section3 {
+    padding-bottom: 50px;
+    margin-top: 50px;
+  }
+
+  .testi-content {
+    padding: 0 20px;
+  }
+
+  .testi-desc p {
+    font-size: 21px;
+    line-height: 1.45;
+  }
+
+  .swiper-arrow {
+    left: 0;
+    right: 0;
+    top: 65%;
+  }
+
+  .arrow-prev,
+  .arrow-next {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ==========================================================================
+   5. Feature Craftswoman & Philosophy Quotes Section 
+   ========================================================================== */
+.about-craft-section {
+  padding: 85px 0 75px 0;
+  background-color: #ffffff;
+}
+
+.about-craft-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 8.5;
+  min-height: 380px;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: #f4ede5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 55px;
+}
+
+.about-craft-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-craft-img-wrap:hover .about-craft-img {
+  transform: scale(1.025);
+}
+
+/* Two-Column Quotes Grid */
+.about-quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.about-quote-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-quote-title {
+  font-family: 'Cormorant Garamond', var(--font-serif), Georgia, serif;
+  font-size: 20.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #1f1d1b;
+  margin: 0 0 14px 0;
+  text-align: center;
+  max-width: 440px;
+}
+
+.about-quote-desc {
+  font-family: var(--font-body), sans-serif;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #6f6861;
+  margin: 0 auto;
+  max-width: 440px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   6. Meet Our Teams Section 
+   ========================================================================== */
+.about-team {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.our-team .section-capture {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.our-team .section-title .sub-title {
+  display: block;
+  font-family: var(--font-body), sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta, #c86542);
+  margin-bottom: 10px;
+}
+
+.our-team .section-title h2 {
+  font-family: 'Cormorant Garamond', var(--font-serif), Georgia, serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #1f1d1b;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.team-wrap ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.team-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team-content .banner-hover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 450 / 580;
+  overflow: hidden;
+  background-color: #f0ebe4;
+  margin-bottom: 18px;
+  border-radius: 2px;
+}
+
+.team-content .banner-hover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-content:hover .banner-hover img {
+  transform: scale(1.05);
+}
+
+.team-info h6 {
+  font-family: var(--font-display), 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #1f1d1b;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.team-info span {
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  color: #726b64;
+  text-transform: capitalize;
+}
+
+/* ==========================================================================
+   7. Trust / Features Badges Section 
+   ========================================================================== */
+.about-features-badges {
+  padding: 80px 0 95px 0;
+  background-color: #ffffff;
+  border-top: 1px solid #f0e8df;
+}
+
+.about-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.about-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-feature-icon-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #F7F3EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-terracotta, #c86542);
+  margin-bottom: 22px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.about-feature-item:hover .about-feature-icon-circle {
+  transform: translateY(-3px);
+  background-color: #f1eae2;
+}
+
+.about-feature-title {
+  font-family: var(--font-display), 'Outfit', sans-serif;
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #1f1d1b;
+  margin: 0 0 12px 0;
+  line-height: 1.35;
+}
+
+.about-feature-desc {
+  font-family: var(--font-body), sans-serif;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #6f6861;
+  margin: 0 auto;
+  max-width: 290px;
+}
+
+/* Responsive Rules for New Sections */
+@media (max-width: 1024px) {
+  .team-wrap ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .about-quotes-grid {
+    gap: 35px;
+  }
+
+  .about-team {
+    padding: 60px 0;
+  }
+
+  .about-features-badges {
+    padding: 60px 0 75px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-craft-section {
+    padding: 50px 0 45px 0;
+  }
+
+  .about-craft-img-wrap {
+    aspect-ratio: 16 / 10;
+    min-height: 260px;
+    margin-bottom: 35px;
+  }
+
+  .about-quotes-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .our-team .section-title h2 {
+    font-size: 32px;
+  }
+
+  .about-features-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .team-wrap ul {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

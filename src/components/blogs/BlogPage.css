@@ -1,0 +1,400 @@
+
+.blog-page-root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ffffff;
+  animation: blogFadeIn 0.35s ease-out;
+}
+
+@keyframes blogFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 1. Breadcrumb Hero Banner Section */
+.blog-breadcrumb-area {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  background-color: #f3f2ee;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.blog-breadcrumb-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+}
+
+.blog-breadcrumb-tint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(28, 22, 18, 0.38);
+  z-index: 1;
+}
+
+.blog-breadcrumb-index {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Breadcrumb Navigation: HOME - NEWS */
+.blog-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+  gap: 8px;
+}
+
+.blog-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.blog-breadcrumb-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s ease, text-decoration 0.2s ease;
+  opacity: 0.92;
+}
+
+.blog-breadcrumb-btn:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.blog-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+  font-size: 13px;
+  user-select: none;
+}
+
+.blog-breadcrumb-current {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.blog-breadcrumb-title h1 {
+  font-family: 'Cormorant Garamond', var(--font-serif), Georgia, serif;
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 2. Main Blog Grid Section */
+.blog-article-section {
+  padding: 75px 0 100px;
+  background-color: #ffffff;
+}
+
+.blog-wrap.without-sidebar {
+  width: 100%;
+}
+
+.sidebar-wrapper.blog-article {
+  width: 100%;
+}
+
+/* 3-Column Grid matching user's HTML class "single-blog-area grid-3" */
+.single-blog-area.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual Blog Card Wrapper */
+.blog-slider {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Warm sand/cream container  */
+.blog-block {
+  display: flex;
+  flex-direction: column;
+  background-color: #FAF7F2;
+  padding: 24px 22px 30px;
+  border-radius: 0;
+  height: 100%;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  position: relative;
+}
+
+.blog-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.06);
+}
+
+/* Top Meta: 10, MAR 2025 | BY ANDREW JOHNS */
+.blog-block .date-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #797169;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.blog-block .date-time .separator {
+  margin: 0 2px;
+  color: #a49c94;
+}
+
+.blog-block .date-time .author {
+  font-weight: 600;
+  color: #797169;
+}
+
+/* Image Container with 66.875% aspect ratio */
+.blog-img.ratio {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-bottom: var(--ratio-percent, 66.875%);
+  overflow: hidden;
+  background-color: #ede7de;
+  cursor: pointer;
+}
+
+.blog-img.ratio img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+/* Darkening tint overlay over the image on hover () */
+.blog-img.ratio::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 28, 38, 0.28);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.blog-block:hover .blog-img.ratio::after {
+  opacity: 1;
+}
+
+.blog-block:hover .blog-img.ratio img {
+  transform: scale(1.04);
+}
+
+/* Center-Aligned Crisp White Square with Terracotta Arrow  */
+.blog-img .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.88);
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  color: var(--accent-terracotta, #c86542);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.blog-block:hover .blog-img .icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Content Area Below Image */
+.blog-post-content {
+  padding-top: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Uppercase Bold Title */
+.blog-title {
+  display: inline-block;
+  font-family: var(--font-display), 'Outfit', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1f1d1b;
+  margin: 0 0 10px 0;
+  line-height: 1.35;
+  transition: color 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.blog-title:hover {
+  color: var(--accent-terracotta, #c86542);
+}
+
+/* Elegant Muted Description */
+.blog-desc {
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #6d665f;
+  margin: 0;
+  max-width: 95%;
+  letter-spacing: 0.01em;
+}
+
+/* Read more link (hidden by default, visible on focus/inspect) */
+.read-more {
+  display: none;
+}
+
+/* Floating Scroll-To-Top Button  */
+.floating-scroll-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 38px;
+  height: 38px;
+  background-color: #ffffff;
+  border: 1px solid #e2dad0;
+  border-left: 2px solid var(--accent-terracotta, #c86542);
+  color: #2b2825;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  z-index: 99;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-scroll-top:hover {
+  background-color: #FAF7F2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .single-blog-area.grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .blog-article-section {
+    padding: 55px 0 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  .single-blog-area.grid-3 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .blog-breadcrumb-title h1 {
+    font-size: 34px;
+  }
+
+  .blog-breadcrumb-area {
+    min-height: 180px;
+    padding: 45px 0;
+  }
+
+  .blog-article-section {
+    padding: 40px 0 65px;
+  }
+
+  .blog-block {
+    padding: 20px 16px 24px;
+  }
+
+  .floating-scroll-top {
+    bottom: 72px;
+    right: 16px;
+  }
+}
+

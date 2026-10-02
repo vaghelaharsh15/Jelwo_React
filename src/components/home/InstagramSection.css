@@ -1,0 +1,276 @@
+
+.instagram-section {
+  width: 100%;
+  padding: 5rem 0 5.5rem;
+  background-color: #fbf8f4;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #ede3d8;
+}
+
+/* Fluid Full-Width Container */
+.instagram-container {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 4vw, 5rem);
+}
+
+/* --------------------------------------------------------------------------
+   Section Header: Subtitle & Title 
+   -------------------------------------------------------------------------- */
+.instagram-section .section-capture {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.25rem;
+}
+
+.instagram-section .section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.instagram-section .sub-title {
+  color: #c86542;
+  font-family: var(--font-body, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.65rem;
+}
+
+.instagram-section h2 {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2.35rem, 4.2vw, 3.25rem);
+  color: #1e1b18;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Carousel Viewport & Slides
+   -------------------------------------------------------------------------- */
+.insta-slider-outer {
+  position: relative;
+  width: 100%;
+}
+
+.insta-slider.swiper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  user-select: none;
+  padding: 6px 0 10px;
+}
+
+.insta-slider.swiper:active {
+  cursor: grabbing;
+}
+
+.insta-slider .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  will-change: transform;
+}
+
+.insta-slide {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Instagram Card Link & Interactive Hover States
+   -------------------------------------------------------------------------- */
+.insta-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: #eee7dd;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.insta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Picture becomes somewhat dark on hover */
+.insta-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(18, 16, 14, 0.48);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+/* Instagram Logo in Center */
+.insta-icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
+  transform: scale(0.85);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.insta-hover-icon {
+  color: #ffffff;
+  stroke: #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Hover Micro-Interactions */
+.insta-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+}
+
+.insta-link:hover .insta-img {
+  transform: scale(1.08);
+}
+
+.insta-link:hover .insta-hover-overlay {
+  opacity: 1;
+}
+
+.insta-link:hover .insta-icon-badge {
+  transform: scale(1.05);
+}
+
+/* --------------------------------------------------------------------------
+   Newsletter Section (Just Below Instagram Cards)
+   -------------------------------------------------------------------------- */
+.insta-newsletter-section {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.insta-newsletter-section .section-capture {
+  margin-bottom: 2rem;
+}
+
+.insta-newsletter-heading {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2.3rem, 4vw, 3.25rem);
+  color: #1e1b18;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.22;
+  margin: 0 auto;
+}
+
+.insta-newsletter-form {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  align-items: stretch;
+  height: 52px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.insta-newsletter-input {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #ebdcd0;
+  border-right: none;
+  border-radius: 0;
+  padding: 0 1.25rem;
+  font-family: var(--font-body, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.92rem;
+  color: #1e1b18;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.insta-newsletter-input::placeholder {
+  color: #8c827a;
+  font-weight: 400;
+}
+
+.insta-newsletter-input:focus {
+  border-color: #c86542;
+}
+
+.insta-newsletter-submit-btn {
+  width: 56px;
+  height: 100%;
+  background-color: #c86542;
+  border: 1px solid #c86542;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  flex-shrink: 0;
+}
+
+.insta-newsletter-submit-btn:hover {
+  background-color: #b35533;
+  border-color: #b35533;
+}
+
+.insta-newsletter-success {
+  margin-top: 1.15rem;
+  font-family: var(--font-body, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.875rem;
+  color: #c86542;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Layout
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .instagram-section {
+    padding: 3.75rem 0 4rem;
+  }
+
+  .instagram-section .section-capture {
+    margin-bottom: 2.25rem;
+  }
+
+  .insta-newsletter-section {
+    margin-top: 3.5rem;
+  }
+
+  .insta-newsletter-form {
+    max-width: 100%;
+    height: 48px;
+  }
+}

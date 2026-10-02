@@ -1,0 +1,244 @@
+
+.luxury-editorial-section {
+  width: 100%;
+  padding: 6rem 0;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-editorial-layout {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 6rem);
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: Visual Composition
+   -------------------------------------------------------------------------- */
+.editorial-visual-col {
+  width: 100%;
+  position: relative;
+}
+
+.editorial-cards-composition {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+  width: 100%;
+}
+
+/* Individual Cards */
+.editorial-card {
+  position: relative;
+  flex: 1;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(25, 20, 15, 0.1);
+}
+
+/* Staggered arrangement like in the 4th Screenshot */
+.card-rings {
+  margin-top: 0;
+}
+
+.card-necklace {
+  margin-top: 3.5rem;
+}
+
+.editorial-img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4.2;
+  overflow: hidden;
+  background-color: #fbf7f2;
+}
+
+.editorial-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-card:hover .editorial-img {
+  transform: scale(1.05);
+}
+
+/* Translucent Watermark Typography (Matches 4th Screenshot) */
+.editorial-watermark-text {
+  position: absolute;
+  bottom: 0;
+  left: 0.85rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+  line-height: 0.95;
+  color: rgba(255, 255, 255, 0.45);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+  letter-spacing: -0.02em;
+}
+
+/* Overlapping Rotating Circular Badge (Matches 4th Screenshot) */
+.editorial-center-badge-wrap {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  pointer-events: auto;
+}
+
+.editorial-rotating-disc {
+  width: clamp(90px, 9.5vw, 115px);
+  height: clamp(90px, 9.5vw, 115px);
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14),
+              0 0 0 4px rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: spinBadge 24s linear infinite;
+}
+
+.editorial-rotating-disc:hover {
+  animation-play-state: paused;
+  transform: scale(1.1);
+  box-shadow: 0 14px 36px rgba(200, 101, 66, 0.28);
+}
+
+@keyframes spinBadge {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.editorial-badge-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Narrative & CTA (Matches 4th Screenshot)
+   -------------------------------------------------------------------------- */
+.editorial-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.editorial-content-inner {
+  max-width: 520px;
+}
+
+.editorial-headline {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.2rem, 3.6vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.22;
+  color: #1a1816;
+  margin: 0 0 1.85rem;
+  letter-spacing: -0.01em;
+}
+
+.editorial-desc-p1 {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: #615a53;
+  margin: 0 0 1.25rem;
+  font-family: var(--font-sans);
+}
+
+.editorial-desc-p2 {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: #756d66;
+  margin: 0 0 2.25rem;
+  font-family: var(--font-sans);
+}
+
+.editorial-cta-wrap {
+  display: flex;
+}
+
+.editorial-shop-btn {
+  display: inline-block;
+  padding: 0.95rem 2.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #c86542;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(200, 101, 66, 0.25);
+}
+
+.editorial-shop-btn:hover {
+  background-color: #b55432;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(200, 101, 66, 0.35);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .luxury-editorial-layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .editorial-content-inner {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .editorial-cta-wrap {
+    justify-content: center;
+  }
+
+  .card-necklace {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .editorial-cards-composition {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card-necklace {
+    margin-top: 0;
+  }
+
+  .editorial-center-badge-wrap {
+    top: 50%;
+  }
+}
